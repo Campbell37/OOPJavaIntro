@@ -21,11 +21,10 @@ public class GameLauncher
 			do
 			{
 				dealer.getDealerTotal();
-			}while ((Player.total > Dealer.dealerTotal)&& (Player.total < 22));  // lets the dealer 'draw' until he beats or matches the player, or goes bust
+			}while ((Player.total > Dealer.dealerTotal)&& (Player.total < 22));  		// lets the dealer 'draw' until he beats or matches the player, or goes bust
 		}
 		
 		Winner whowins = new Winner();
 		whowins.getWinners();
-		
 	}
 }
