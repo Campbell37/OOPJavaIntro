@@ -1,5 +1,7 @@
 package clockV1;
 
+import java.util.concurrent.TimeUnit;
+
 public class ClockDisplay 
 {
 	private Number hour;
@@ -43,19 +45,23 @@ public class ClockDisplay
         System.out.println(display);
     }
     
-    public void timeCount()
+    public void timeCount()  throws InterruptedException
     {
-    	second.increase();
-	    
-	    if(second.getValue() == 0)
-	    {
-    		minute.increase();
-    		
-	    	if(minute.getValue() == 0)
-	    	{
-	    		hour.increase();
+	    int x;
+	    for(x=0; x<3600; x++)
+	    {   second.increase();
+		    
+		    if(second.getValue() == 0)
+		    {
+	    		minute.increase();
+	    		
+		    	if(minute.getValue() == 0)
+		    	{
+		    		hour.increase();
+		    	}
 	    	}
-    	}
-    	updateDisplay();
+	    	updateDisplay();
+	    	TimeUnit.SECONDS.sleep(1);
+	    }
     }
 }
