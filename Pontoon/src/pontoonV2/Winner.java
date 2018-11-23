@@ -16,7 +16,6 @@ public class Winner
 
 	public void getWinners()						// displays who wins
 	{
-
 		 											// if else statements determine who the winner is
 			
 		if (total > 21)

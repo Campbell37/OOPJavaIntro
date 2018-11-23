@@ -35,7 +35,11 @@ public class Player
 			do
 			{
 				this.getcardNewValue();
-				this.getTotal();				
+				this.getTotal();
+				if (total>21)
+				{
+					break;
+				}
 				System.out.println("Would you like a new card? Y/N");
 				choice = kboard.next();	
 				if ((choice.equalsIgnoreCase("y")) && total>21)
